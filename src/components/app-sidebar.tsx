@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { BookOpen, Bot, LifeBuoy, Send, SquareTerminal } from "lucide-react";
 import Link from "next/link";
 import { BookOpen, Bot, LifeBuoy, Send, SquareTerminal } from "lucide-react";
 
@@ -15,7 +16,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { RovtechLogo } from "./rovtech-logo";
-import SignIn from "./auth/sign-in";
 import UserButton from "./auth/user-button";
 const data = {
   user: {
