@@ -1,23 +1,10 @@
 "use client";
 
 import * as React from "react";
-import {
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import Link from "next/link";
+import { BookOpen, Bot, LifeBuoy, Send, SquareTerminal } from "lucide-react";
 
 import { NavMain } from "@/components/nav/nav-main";
-import { NavProjects } from "@/components/nav/nav-projects";
-import { NavSecondary } from "@/components/nav/nav-secondary";
-import { NavUser } from "@/components/nav/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -28,7 +15,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { RovtechLogo } from "./rovtech-logo";
-
+import SignIn from "./auth/sign-in";
+import UserButton from "./auth/user-button";
 const data = {
   user: {
     name: "seyed",
@@ -38,43 +26,43 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: "Settings",
-          url: "#",
+          url: "/settings",
         },
       ],
     },
     {
       title: "Contacts",
-      url: "#",
+      url: "/contacts",
       icon: Bot,
       items: [
         {
           title: "Organisations",
-          url: "#",
+          url: "/contacts/organisations",
         },
         {
           title: "People",
-          url: "#",
+          url: "/contacts/people",
         },
       ],
     },
     {
       title: "Projects",
-      url: "#",
+      url: "/projects",
       icon: BookOpen,
       items: [
         {
           title: "All Projects",
-          url: "#",
+          url: "/projects",
         },
         {
           title: "New Project",
-          url: "#",
+          url: "/projects/new",
         },
       ],
     },
@@ -82,12 +70,12 @@ const data = {
   navSecondary: [
     {
       title: "Support",
-      url: "#",
+      url: "/support",
       icon: LifeBuoy,
     },
     {
       title: "Feedback",
-      url: "#",
+      url: "/feedback",
       icon: Send,
     },
   ],
@@ -100,7 +88,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <Link href="/">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <RovtechLogo />
                 </div>
@@ -110,7 +98,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   </span>
                   <span className="truncate text-xs">Rovtech Solutions</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -118,7 +106,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain title="Main" items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter></SidebarFooter>
+      <SidebarFooter>
+        <UserButton />
+      </SidebarFooter>
     </Sidebar>
   );
 }
