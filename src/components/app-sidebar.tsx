@@ -4,20 +4,12 @@ import * as React from "react";
 import {
   BookOpen,
   Bot,
-  Command,
-  Frame,
   LifeBuoy,
-  Map,
-  PieChart,
   Send,
-  Settings2,
   SquareTerminal,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav/nav-main";
-import { NavProjects } from "@/components/nav/nav-projects";
-import { NavSecondary } from "@/components/nav/nav-secondary";
-import { NavUser } from "@/components/nav/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -38,43 +30,43 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: "Settings",
-          url: "#",
+          url: "/settings",
         },
       ],
     },
     {
       title: "Contacts",
-      url: "#",
+      url: "/contacts",
       icon: Bot,
       items: [
         {
           title: "Organisations",
-          url: "#",
+          url: "/contacts/organisations",
         },
         {
           title: "People",
-          url: "#",
+          url: "/contacts/people",
         },
       ],
     },
     {
       title: "Projects",
-      url: "#",
+      url: "/projects",
       icon: BookOpen,
       items: [
         {
           title: "All Projects",
-          url: "#",
+          url: "/projects",
         },
         {
           title: "New Project",
-          url: "#",
+          url: "/projects/new",
         },
       ],
     },
@@ -82,12 +74,12 @@ const data = {
   navSecondary: [
     {
       title: "Support",
-      url: "#",
+      url: "/support",
       icon: LifeBuoy,
     },
     {
       title: "Feedback",
-      url: "#",
+      url: "/feedback",
       icon: Send,
     },
   ],
@@ -100,7 +92,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <a href="/">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <RovtechLogo />
                 </div>
