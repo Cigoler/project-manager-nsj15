@@ -3,7 +3,6 @@
 import * as React from "react";
 import { BookOpen, Bot, LifeBuoy, Send, SquareTerminal } from "lucide-react";
 import Link from "next/link";
-import { BookOpen, Bot, LifeBuoy, Send, SquareTerminal } from "lucide-react";
 
 import { NavMain } from "@/components/nav/nav-main";
 import {
