@@ -7,7 +7,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-
+import UserTable from "@/components/users/users-table";
 export default function Dashboard() {
   return (
     <SidebarProvider>
@@ -59,7 +59,7 @@ export default function Dashboard() {
                 <CardTitle>Widget Four</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Widget Four</p>
+                <UserTable />
               </CardContent>
             </Card>
           </div>
